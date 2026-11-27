@@ -10,7 +10,6 @@ import {
   Copy,
   Check,
   Sparkles,
-  Calendar,
 } from "lucide-react";
 
 import { Aurora } from "@/components/Aurora";
@@ -26,13 +25,13 @@ export const Route = createFileRoute("/")({
       {
         name: "description",
         content:
-          "In loving memory of Mohammed Ramzan Haji Noor Mohammed Khokar & Hajjan Kherunissa. You are cordially invited to celebrate the Nikah and Walima of Adnan Khokar and Maheen Tanwar on 24th & 25th December 2026 in Jogeshwari West, Mumbai.",
+          "In loving memory of Late Mohammed Ramzan Haji Noor Mohammed Khokar & Hajjan Kherunissa. You are cordially invited to celebrate the Nikah and Walima of Adnan Khokar and Maheen Tanwar on 24th & 25th December 2026 in Jogeshwari West, Mumbai.",
       },
       { property: "og:title", content: "Adnan & Maheen — Wedding Invitation | 24 & 25 Dec 2026" },
       {
         property: "og:description",
         content:
-          "In loving memory of Mohammed Ramzan Haji Noor Mohammed Khokar & Hajjan Kherunissa. Nikah on 24 Dec at The Grand FM Banquet Hall & Walima on 25 Dec at Kohinoor Marriage Lawn, Jogeshwari West, Mumbai.",
+          "In loving memory of Late Mohammed Ramzan Haji Noor Mohammed Khokar & Hajjan Kherunissa. Nikah on 24 Dec at The Grand FM Banquet Hall & Walima on 25 Dec at Kohinoor Marriage Lawn, Jogeshwari West, Mumbai.",
       },
       { property: "og:type", content: "website" },
       { property: "og:image", content: "/og-image.png" },
@@ -46,7 +45,7 @@ export const Route = createFileRoute("/")({
       {
         name: "twitter:description",
         content:
-          "In loving memory of Mohammed Ramzan Haji Noor Mohammed Khokar & Hajjan Kherunissa. Nikah: 24th Dec · Walima: 25th Dec, Jogeshwari West, Mumbai.",
+          "In loving memory of Late Mohammed Ramzan Haji Noor Mohammed Khokar & Hajjan Kherunissa. Nikah: 24th Dec · Walima: 25th Dec, Jogeshwari West, Mumbai.",
       },
       { name: "twitter:image", content: "/og-image.png" },
     ],
@@ -60,7 +59,7 @@ const WALIMA_DATE = new Date("2026-12-25T20:30:00+05:30");
 const NIKAH_VENUE = {
   title: "Nikah Ceremony",
   dateFormatted: "Thursday, 24 December 2026",
-  timing: "After Isha Prayer (08:30 PM onwards)",
+  timing: "After Eshah Namaz",
   name: "The Grand FM Banquet Hall",
   address: "The Grand FM Banquet Hall, Jogeshwari West, Mumbai, Maharashtra",
   mapsUrl: "https://share.google/uWeduatuvT8MF0Mt3",
@@ -115,7 +114,7 @@ function generateIcs(event: "nikah" | "walima") {
     : "Walima Reception: Adnan & Maheen";
   const venue = isNikah ? NIKAH_VENUE.address : WALIMA_VENUE.address;
   const desc = isNikah
-    ? "With joyous hearts, Khokar & Tanwar families invite you to the Nikah Ceremony of Adnan & Maheen at The Grand FM Banquet Hall, Jogeshwari West, Mumbai."
+    ? "With joyous hearts, Khokar & Tanwar families invite you to the Nikah Ceremony of Adnan & Maheen at The Grand FM Banquet Hall, Jogeshwari West, Mumbai (After Eshah Namaz)."
     : "Khokar & Tanwar families cordially invite you to the Walima Banquet of Adnan & Maheen at Kohinoor Marriage Lawn, Jogeshwari West, Mumbai.";
 
   const body = [
@@ -210,12 +209,12 @@ function Hero() {
           <p className="font-arabic text-lg sm:text-2xl leading-relaxed text-gold mt-0.5 drop-shadow-md">
             بَارَكَ اللهُ لَكُمَا وَبَارَكَ عَلَيْكُمَا وَجَمَعَ بَيْنَكُمَا فِي خَيْرٍ
           </p>
-          <p className="mx-auto mt-2 max-w-xs font-serif text-[0.72rem] sm:text-xs font-light italic leading-relaxed tracking-wider text-cream/80">
+          <p className="mx-auto mt-2 max-w-xs text-[0.68rem] font-light leading-relaxed tracking-wider text-cream/80">
             “May Allah bless you both, shower His blessings upon you, and unite you together in goodness.”
           </p>
         </motion.div>
 
-        {/* In Loving Memory Tribute Banner (Without 'Late') */}
+        {/* In Loving Memory Tribute Banner */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -224,19 +223,19 @@ function Hero() {
         >
           <div className="flex items-center justify-center gap-2">
             <Sparkles className="h-3.5 w-3.5 text-gold-soft" />
-            <p className="font-royal text-[0.65rem] sm:text-[0.72rem] font-semibold uppercase tracking-[0.3em] text-gold-bright">
+            <p className="text-[0.62rem] sm:text-[0.68rem] font-semibold uppercase tracking-[0.3em] text-gold-bright">
               In Loving Memory Of
             </p>
             <Sparkles className="h-3.5 w-3.5 text-gold-soft" />
           </div>
-          <p className="mt-1 font-display text-sm sm:text-base font-bold tracking-wide text-cream">
-            Mohammed Ramzan Haji Noor Mohammed Khokar
+          <p className="mt-1 font-display text-sm sm:text-base font-bold italic text-cream">
+            Late Mohammed Ramzan Haji Noor Mohammed Khokar
           </p>
-          <p className="font-display text-xs sm:text-sm font-semibold text-gold-soft">
+          <p className="font-display text-xs sm:text-sm font-medium text-gold-soft">
             &amp; Hajjan Kherunissa
           </p>
           <div className="mx-auto my-1.5 h-[1px] w-20 bg-gradient-to-r from-transparent via-gold/60 to-transparent" />
-          <p className="font-royal text-[0.62rem] uppercase tracking-[0.3em] text-cream/70 font-medium">
+          <p className="text-[0.6rem] uppercase tracking-[0.3em] text-cream/70 font-medium">
             Khokar Family
           </p>
         </motion.div>
@@ -282,20 +281,20 @@ function Hero() {
 
             {/* Content Inside Imperial Card */}
             <div className="relative z-10 py-2">
-              <p className="font-royal text-[0.68rem] sm:text-xs uppercase tracking-[0.35em] font-semibold text-[#8c6721]">
+              <p className="font-display text-[0.68rem] uppercase tracking-[0.45em] font-semibold text-[#8c6721]">
                 Together with their families
               </p>
 
-              {/* Groom */}
+              {/* Groom - With Royal Font */}
               <div className="mt-4 sm:mt-6">
-                <h1 className="font-royal text-3xl sm:text-4xl md:text-5xl font-bold tracking-[0.06em] uppercase leading-[1.05] text-[#1a382d] drop-shadow-sm">
+                <h1 className="font-royal text-3xl sm:text-4xl md:text-5xl font-bold tracking-wide uppercase leading-[1.05] text-[#1a382d] drop-shadow-sm">
                   Adnan
                   <br />
-                  <span className="font-display text-2xl sm:text-3xl md:text-4xl font-semibold tracking-normal capitalize text-[#8c6721]">
+                  <span className="font-royal text-2xl sm:text-3xl md:text-4xl font-semibold tracking-normal text-[#234b3d]">
                     Khokar
                   </span>
                 </h1>
-                <p className="mt-2 font-script text-2xl sm:text-3xl text-[#8a2435]">
+                <p className="mt-1.5 font-script text-xl sm:text-2xl text-[#8a2435]">
                   Son of Mrs. Aziza &amp; Mr. Abdul Aziz Ramzan Khokar (Fogo)
                 </p>
               </div>
@@ -304,31 +303,31 @@ function Hero() {
               <div className="my-5 sm:my-6 flex items-center justify-center">
                 <div className="h-[1px] w-16 sm:w-24 bg-gradient-to-r from-transparent via-[#b88c3a] to-transparent" />
                 <div className="mx-3 grid h-10 w-10 sm:h-11 sm:w-11 place-items-center rounded-full border border-[#b88c3a] bg-gradient-to-b from-[#faf5eb] to-[#eedcba] shadow-md">
-                  <span className="font-script text-2xl sm:text-3xl text-[#1a382d] font-bold">&amp;</span>
+                  <span className="font-script text-xl sm:text-2xl text-[#1a382d] font-bold">&amp;</span>
                 </div>
                 <div className="h-[1px] w-16 sm:w-24 bg-gradient-to-r from-transparent via-[#b88c3a] to-transparent" />
               </div>
 
-              {/* Bride */}
+              {/* Bride - With Royal Font */}
               <div>
-                <h2 className="font-royal text-3xl sm:text-4xl md:text-5xl font-bold tracking-[0.06em] uppercase leading-[1.05] text-[#1a382d] drop-shadow-sm">
+                <h2 className="font-royal text-3xl sm:text-4xl md:text-5xl font-bold tracking-wide uppercase leading-[1.05] text-[#1a382d] drop-shadow-sm">
                   Maheen
                   <br />
-                  <span className="font-display text-2xl sm:text-3xl md:text-4xl font-semibold tracking-normal capitalize text-[#8c6721]">
+                  <span className="font-royal text-2xl sm:text-3xl md:text-4xl font-semibold tracking-normal text-[#234b3d]">
                     Tanwar
                   </span>
                 </h2>
-                <p className="mt-2 font-script text-2xl sm:text-3xl text-[#8a2435]">
+                <p className="mt-1.5 font-script text-xl sm:text-2xl text-[#8a2435]">
                   Daughter of Mrs. Sajida &amp; Mr. Iftekhar Naeem Maqbool Tanwar
                 </p>
               </div>
 
               {/* Formal Invitation Text */}
               <div className="mt-6 pt-5 border-t border-[#c49a45]/30">
-                <p className="font-royal text-xs sm:text-sm uppercase tracking-[0.25em] font-semibold text-[#1a382d]/90">
+                <p className="font-display text-xs sm:text-sm uppercase tracking-[0.25em] font-semibold text-[#1a382d]/90">
                   Cordially invite you to celebrate their
                 </p>
-                <p className="mt-1.5 font-script text-2xl sm:text-3xl font-bold text-[#8c6721]">
+                <p className="mt-1 font-display text-lg sm:text-xl font-bold italic text-[#8c6721]">
                   Nikah Ceremony &amp; Walima Banquet
                 </p>
               </div>
@@ -344,11 +343,11 @@ function Hero() {
           className="mt-7 flex flex-col items-center justify-center text-center"
         >
           <div className="gold-badge px-6 py-2.5 shadow-[0_10px_30px_rgba(0,0,0,0.6)] backdrop-blur-md border border-gold/60">
-            <p className="font-royal text-xs sm:text-sm uppercase tracking-[0.3em] font-semibold text-gold-bright">
+            <p className="text-xs sm:text-sm uppercase tracking-[0.35em] font-semibold text-gold-bright">
               24th &amp; 25th December 2026
             </p>
           </div>
-          <p className="mt-2.5 font-royal text-[0.68rem] uppercase tracking-[0.3em] font-medium text-cream/70">
+          <p className="mt-2.5 text-[0.68rem] uppercase tracking-[0.3em] font-medium text-cream/70">
             Jogeshwari West · Mumbai
           </p>
         </motion.div>
@@ -368,10 +367,10 @@ function QuranicVerse() {
             وَمِنْ آيَاتِهِ أَنْ خَلَقَ لَكُم مِّنْ أَنفُسِكُمْ أَزْوَاجًا لِّتَسْكُنُوا إِلَيْهَا وَجَعَلَ بَيْنَكُم مَّوَدَّةً وَرَحْمَةً
           </p>
           <div className="gold-rule mx-auto my-5 w-28" />
-          <p className="font-serif text-sm sm:text-base italic leading-relaxed text-cream/90">
+          <p className="font-display text-sm sm:text-base italic leading-relaxed text-cream/90">
             “And of His signs is that He created for you from yourselves mates that you may find tranquility in them; and He placed between you affection and mercy.”
           </p>
-          <p className="mt-3 font-royal text-[0.68rem] uppercase tracking-[0.35em] font-semibold text-gold">
+          <p className="mt-3 text-[0.65rem] uppercase tracking-[0.35em] font-semibold text-gold">
             Surah Ar-Rum · 30:21
           </p>
         </div>
@@ -399,10 +398,10 @@ function Couple() {
   return (
     <section className="relative mx-auto max-w-lg px-6 py-16">
       <Reveal>
-        <p className="text-center font-royal text-[0.68rem] uppercase tracking-[0.45em] text-gold font-medium">
+        <p className="text-center text-[0.65rem] uppercase tracking-[0.45em] text-gold font-medium">
           Two Souls, One Sacred Journey
         </p>
-        <h2 className="mt-2 text-center font-royal text-3xl sm:text-4xl uppercase tracking-wider text-gradient-gold">
+        <h2 className="mt-2 text-center font-display text-4xl italic text-gradient-gold sm:text-5xl">
           The Bride &amp; Groom
         </h2>
         <div className="gold-rule mx-auto mt-4 w-32" />
@@ -428,12 +427,12 @@ function Couple() {
               </div>
 
               <div className="gold-badge mt-6 px-5 py-1 shadow-md">
-                <p className="font-royal text-[0.68rem] uppercase tracking-[0.35em] text-gold-bright font-semibold">
+                <p className="text-[0.65rem] uppercase tracking-[0.35em] text-gold-bright font-semibold">
                   {p.role}
                 </p>
               </div>
 
-              <h3 className="mt-3 font-royal text-2xl sm:text-3xl uppercase tracking-wide font-bold text-cream">
+              <h3 className="mt-3 font-display text-3xl sm:text-4xl italic font-semibold text-cream">
                 {p.name}
               </h3>
               <p className="mt-3 max-w-sm text-xs sm:text-sm leading-relaxed text-cream/75">
@@ -461,10 +460,10 @@ function CountdownSection() {
       />
       <div className="relative mx-auto max-w-md text-center">
         <Reveal>
-          <p className="text-[0.68rem] font-royal uppercase tracking-[0.45em] text-gold font-medium">
+          <p className="text-[0.65rem] uppercase tracking-[0.45em] text-gold font-medium">
             Counting Every Sacred Moment
           </p>
-          <h2 className="mt-2 font-royal text-3xl sm:text-4xl uppercase tracking-wider text-gradient-gold">
+          <h2 className="mt-2 font-display text-4xl italic text-gradient-gold sm:text-5xl">
             Until We Say Qubool
           </h2>
           <div className="gold-rule mx-auto mt-4 w-32" />
@@ -497,23 +496,23 @@ function VenueCard({
     <div className="glass-tile p-7 sm:p-9 text-center relative overflow-hidden border border-gold/40">
       <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-gold/10 via-transparent to-transparent" />
 
-      <span className="gold-badge px-4 py-1 font-royal text-[0.68rem] uppercase tracking-[0.35em] font-semibold text-gold-bright">
+      <span className="gold-badge px-4 py-1 text-[0.65rem] uppercase tracking-[0.35em] font-semibold text-gold-bright">
         {venue.title}
       </span>
 
-      <p className="mt-4 font-royal text-xl sm:text-2xl font-bold uppercase tracking-wide text-cream">
+      <p className="mt-4 font-display text-2xl sm:text-3xl font-semibold text-cream">
         {venue.dateFormatted}
       </p>
 
       <p className="mt-2 flex items-center justify-center gap-2 text-sm text-gold-soft">
         <Clock className="h-4 w-4 shrink-0 text-gold" />
-        <span className="font-display font-medium">{venue.timing}</span>
+        <span>{venue.timing}</span>
       </p>
 
       <div className="gold-rule my-5" />
 
       <div className="space-y-1.5">
-        <p className="font-royal text-xl sm:text-2xl font-bold uppercase text-cream">
+        <p className="font-display text-2xl sm:text-3xl font-semibold text-cream">
           {venue.name}
         </p>
         <p className="flex items-start justify-center gap-2 text-xs sm:text-sm leading-relaxed text-cream/80 max-w-xs mx-auto">
@@ -529,7 +528,7 @@ function VenueCard({
           target="_blank"
           rel="noreferrer"
           whileTap={{ scale: 0.96 }}
-          className="flex-1 inline-flex items-center justify-center gap-2 rounded-full py-3.5 font-royal text-xs font-semibold tracking-wider uppercase text-[#1a382d] shadow-[var(--shadow-lux)] transition-transform hover:scale-102"
+          className="flex-1 inline-flex items-center justify-center gap-2 rounded-full py-3.5 text-xs sm:text-sm font-semibold tracking-wide text-[#1a382d] shadow-[var(--shadow-lux)] transition-transform hover:scale-102"
           style={{ background: "var(--gradient-gold)" }}
         >
           <Navigation className="h-4 w-4" />
@@ -540,7 +539,7 @@ function VenueCard({
           href={generateIcs(eventKey)}
           download={`adnan-maheen-${eventKey}.ics`}
           whileTap={{ scale: 0.96 }}
-          className="inline-flex items-center justify-center gap-2 rounded-full border border-gold/60 bg-gold/15 px-4 py-3.5 font-royal text-xs font-semibold tracking-wider uppercase text-gold-bright hover:bg-gold/25 transition-all"
+          className="inline-flex items-center justify-center gap-2 rounded-full border border-gold/60 bg-gold/15 px-4 py-3.5 text-xs sm:text-sm font-medium tracking-wide text-gold-bright hover:bg-gold/25 transition-all"
         >
           <CalendarPlus className="h-4 w-4" />
           Calendar
@@ -550,7 +549,7 @@ function VenueCard({
           type="button"
           onClick={handleCopy}
           whileTap={{ scale: 0.96 }}
-          className="inline-flex items-center justify-center gap-2 rounded-full border border-gold/40 bg-emerald-rich/60 px-4 py-3.5 font-royal text-xs font-semibold tracking-wider uppercase text-cream/90 hover:bg-gold/20 transition-all"
+          className="inline-flex items-center justify-center gap-2 rounded-full border border-gold/40 bg-emerald-rich/60 px-4 py-3.5 text-xs sm:text-sm font-medium tracking-wide text-cream/90 hover:bg-gold/20 transition-all"
         >
           {copied ? (
             <>
@@ -573,14 +572,14 @@ function Details() {
   return (
     <section id="venue" className="relative mx-auto max-w-lg px-6 py-16">
       <Reveal>
-        <p className="text-center font-royal text-[0.68rem] uppercase tracking-[0.45em] text-gold font-medium">
+        <p className="text-center text-[0.65rem] uppercase tracking-[0.45em] text-gold font-medium">
           Where &amp; When
         </p>
-        <h2 className="mt-2 text-center font-royal text-3xl sm:text-4xl uppercase tracking-wider text-gradient-gold">
+        <h2 className="mt-2 text-center font-display text-4xl italic text-gradient-gold sm:text-5xl">
           Venues &amp; Dates
         </h2>
         <div className="gold-rule mx-auto mt-4 w-32" />
-        <p className="mt-3 text-center text-xs text-cream/70 font-display">
+        <p className="mt-3 text-center text-xs text-cream/70">
           Both celebrations are graciously hosted in Jogeshwari West, Mumbai.
         </p>
       </Reveal>
@@ -631,24 +630,24 @@ function Footer() {
           className="mx-auto w-48 opacity-80"
         />
         <Reveal className="mt-6">
-          <p className="font-serif text-xl sm:text-2xl italic leading-relaxed text-cream/90">
+          <p className="font-display text-2xl sm:text-3xl italic leading-relaxed text-cream/90">
             “May He unite your hearts in goodness, strengthen you with patience, and grant you harmony, prosperity, and everlasting happiness.”
           </p>
         </Reveal>
         <Reveal delay={0.1}>
-          <p className="mt-8 font-script text-5xl text-gradient-gold">Adnan &amp; Maheen</p>
-          <p className="mt-2 font-royal text-[0.65rem] uppercase tracking-[0.4em] text-cream/60">
+          <p className="mt-8 font-script text-4xl text-gradient-gold">Adnan &amp; Maheen</p>
+          <p className="mt-2 text-[0.62rem] uppercase tracking-[0.4em] text-cream/60">
             We await your precious duas &amp; presence
           </p>
         </Reveal>
 
         <div className="gold-rule mx-auto mt-10 w-24" />
 
-        <p className="mt-6 inline-flex items-center gap-1.5 font-display text-xs sm:text-sm tracking-wide text-cream/70">
-          In loving memory of Mohammed Ramzan Haji Noor Mohammed Khokar &amp; Hajjan Kherunissa
+        <p className="mt-6 inline-flex items-center gap-1.5 text-[0.62rem] uppercase tracking-[0.3em] text-cream/50">
+          In loving memory of Late Mohammed Ramzan Haji Noor Mohammed Khokar &amp; Hajjan Kherunissa
         </p>
 
-        <p className="mt-2 font-royal text-[0.65rem] uppercase tracking-[0.25em] text-gold-soft/80 font-medium">
+        <p className="mt-2 text-[0.62rem] uppercase tracking-[0.25em] text-gold-soft/80">
           With best compliments from Khokar &amp; Tanwar Families
         </p>
 
@@ -657,7 +656,7 @@ function Footer() {
             href="https://www.instagram.com/invitestory.in/"
             target="_blank"
             rel="noreferrer"
-            className="mt-4 inline-block font-royal text-[0.65rem] uppercase tracking-[0.35em] text-gold-soft/80 transition-colors hover:text-gold"
+            className="mt-4 inline-block text-[0.62rem] uppercase tracking-[0.35em] text-gold-soft/80 transition-colors hover:text-gold"
           >
             Follow @invitestory.in on Instagram
           </a>

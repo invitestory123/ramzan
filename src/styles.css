@@ -194,10 +194,9 @@
   --color-cream-soft: var(--cream-soft);
   --color-rose: var(--rose);
   --color-rose-deep: var(--rose-deep);
-  --font-display: "Cinzel", "Playfair Display", "Cormorant Garamond", Georgia, serif;
-  --font-royal: "Cinzel Decorative", "Cinzel", Georgia, serif;
-  --font-serif: "Cormorant Garamond", "Playfair Display", serif;
-  --font-script: "Pinyon Script", "Alex Brush", "Great Vibes", cursive;
+  --font-display: "Cormorant Garamond", serif;
+  --font-royal: "Cinzel Decorative", "Cinzel", serif;
+  --font-script: "Pinyon Script", "Great Vibes", cursive;
   --font-body: "Jost", sans-serif;
   --font-arabic: "Amiri", serif;
 }
