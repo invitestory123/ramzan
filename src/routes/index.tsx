@@ -13,10 +13,8 @@ import {
 } from "lucide-react";
 
 import { Aurora } from "@/components/Aurora";
-import { Countdown } from "@/components/Countdown";
 import { ParticlesCanvas } from "@/components/ParticlesCanvas";
 import { AudioPlayer } from "@/components/AudioPlayer";
-import { TimelineSection } from "@/components/TimelineSection";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -285,7 +283,7 @@ function Hero() {
                 Together with their families
               </p>
 
-              {/* Groom - With Royal Font */}
+              {/* Groom - Royal font on Name, Clean Readable Original Template Font on Parents */}
               <div className="mt-4 sm:mt-6">
                 <h1 className="font-royal text-3xl sm:text-4xl md:text-5xl font-bold tracking-wide uppercase leading-[1.05] text-[#1a382d] drop-shadow-sm">
                   Adnan
@@ -294,7 +292,7 @@ function Hero() {
                     Khokar
                   </span>
                 </h1>
-                <p className="mt-1.5 font-script text-xl sm:text-2xl text-[#8a2435]">
+                <p className="mt-2 font-display text-base sm:text-lg font-semibold tracking-wide text-[#8a2435]">
                   Son of Mrs. Aziza &amp; Mr. Abdul Aziz Ramzan Khokar (Fogo)
                 </p>
               </div>
@@ -308,7 +306,7 @@ function Hero() {
                 <div className="h-[1px] w-16 sm:w-24 bg-gradient-to-r from-transparent via-[#b88c3a] to-transparent" />
               </div>
 
-              {/* Bride - With Royal Font */}
+              {/* Bride - Royal font on Name, Clean Readable Original Template Font on Parents */}
               <div>
                 <h2 className="font-royal text-3xl sm:text-4xl md:text-5xl font-bold tracking-wide uppercase leading-[1.05] text-[#1a382d] drop-shadow-sm">
                   Maheen
@@ -317,7 +315,7 @@ function Hero() {
                     Tanwar
                   </span>
                 </h2>
-                <p className="mt-1.5 font-script text-xl sm:text-2xl text-[#8a2435]">
+                <p className="mt-2 font-display text-base sm:text-lg font-semibold tracking-wide text-[#8a2435]">
                   Daughter of Mrs. Sajida &amp; Mr. Iftekhar Naeem Maqbool Tanwar
                 </p>
               </div>
@@ -446,37 +444,6 @@ function Couple() {
   );
 }
 
-function CountdownSection() {
-  return (
-    <section className="relative overflow-hidden px-6 py-20">
-      <img
-        src="https://media.invitestory.in/emerald-nikah/images/mandala.png"
-        alt=""
-        aria-hidden
-        loading="lazy"
-        width={1024}
-        height={1024}
-        className="pointer-events-none absolute left-1/2 top-1/2 w-[140%] -translate-x-1/2 -translate-y-1/2 opacity-15 spin-very-slow"
-      />
-      <div className="relative mx-auto max-w-md text-center">
-        <Reveal>
-          <p className="text-[0.65rem] uppercase tracking-[0.45em] text-gold font-medium">
-            Counting Every Sacred Moment
-          </p>
-          <h2 className="mt-2 font-display text-4xl italic text-gradient-gold sm:text-5xl">
-            Until We Say Qubool
-          </h2>
-          <div className="gold-rule mx-auto mt-4 w-32" />
-        </Reveal>
-
-        <Reveal delay={0.15} className="mt-10">
-          <Countdown target={NIKAH_DATE.getTime()} />
-        </Reveal>
-      </div>
-    </section>
-  );
-}
-
 function VenueCard({
   eventKey,
   venue,
@@ -576,7 +543,7 @@ function Details() {
           Where &amp; When
         </p>
         <h2 className="mt-2 text-center font-display text-4xl italic text-gradient-gold sm:text-5xl">
-          Venues &amp; Dates
+          Nikah &amp; Walima Reception
         </h2>
         <div className="gold-rule mx-auto mt-4 w-32" />
         <p className="mt-3 text-center text-xs text-cream/70">
@@ -675,8 +642,6 @@ function Invitation() {
       <Hero />
       <QuranicVerse />
       <Couple />
-      <CountdownSection />
-      <TimelineSection />
       <Details />
       <Footer />
     </main>
