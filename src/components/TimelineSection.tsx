@@ -107,10 +107,10 @@ export function TimelineSection() {
       <div className="pointer-events-none absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 h-96 w-96 rounded-full bg-gold/5 blur-[90px]" />
 
       <div className="relative text-center">
-        <p className="text-[0.65rem] uppercase tracking-[0.45em] text-gold font-medium">
+        <p className="font-royal text-[0.68rem] uppercase tracking-[0.45em] text-gold font-medium">
           Order of Celebrations
         </p>
-        <h2 className="mt-2 font-display text-4xl italic text-gradient-gold sm:text-5xl">
+        <h2 className="mt-2 font-royal text-3xl sm:text-4xl uppercase tracking-wider text-gradient-gold">
           Wedding Itinerary
         </h2>
         <div className="gold-rule mx-auto mt-4 w-32" />
@@ -128,7 +128,7 @@ export function TimelineSection() {
               key={day.dayLabel}
               type="button"
               onClick={() => setActiveDay(idx)}
-              className={`group flex items-center gap-2 rounded-full px-5 py-2.5 text-xs font-semibold tracking-wider uppercase transition-all duration-300 ${
+              className={`group flex items-center gap-2 rounded-full px-5 py-2.5 font-royal text-xs font-semibold tracking-widest uppercase transition-all duration-300 ${
                 isActive
                   ? "bg-gradient-to-r from-gold via-gold-soft to-gold text-ink shadow-[0_0_20px_rgba(229,193,120,0.4)]"
                   : "border border-gold/40 bg-emerald-rich/60 text-cream/80 hover:border-gold hover:text-gold-bright"
@@ -149,10 +149,10 @@ export function TimelineSection() {
         transition={{ duration: 0.4 }}
         className="mt-6 rounded-2xl border border-gold/30 bg-emerald-rich/40 p-4 text-center backdrop-blur-md"
       >
-        <p className="font-display text-lg sm:text-xl font-bold text-gold-bright">
+        <p className="font-royal text-lg sm:text-xl font-bold uppercase tracking-wide text-gold-bright">
           {CELEBRATIONS[activeDay].date}
         </p>
-        <p className="mt-1 text-xs text-cream/70">
+        <p className="mt-1 text-xs text-cream/70 font-display">
           {CELEBRATIONS[activeDay].venue}
         </p>
       </motion.div>
@@ -196,7 +196,7 @@ export function TimelineSection() {
                     </span>
                   </div>
 
-                  <h3 className="mt-2 font-display text-2xl sm:text-3xl font-semibold text-cream group-hover:text-gold-soft transition-colors">
+                  <h3 className="mt-2 font-royal text-xl sm:text-2xl font-bold uppercase tracking-wide text-cream group-hover:text-gold-soft transition-colors">
                     {event.title}
                   </h3>
 
